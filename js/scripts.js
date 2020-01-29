@@ -29,49 +29,42 @@ var addPlayer1Score = function (){
     turnTotal =0;
 if (player1Total >= 100) {
     alert("player 1 wins!");
-    alert("player 1 score:" + " ")
+    alert("player 1 score:" + " " + player1Total + "computer score:" + computerTotal)
 }
 else { 
-    alert("Player 1 score:" + " " +player1Total)
+    alert("Player 1 score:" + " " +player1Total + "computer score:" + computerTotal)
     alert("Player 2 turn!")
 }
 };
 
 var computerRoll = function(result){
     var result = dice.roll();
+    console.log(result)
 
     if (result === 1) {
-        alert("You busted! That is the end of your turn")
-        alert("Computer's turn! Click 'computer roll' to start their turn")
+        alert("Computer busted! That is the end of their turn")
+        alert("Player 1's turn! Click'Roll' to start your turn!")
         turnTotal = 0;
     }
     else if (result === 2 || result === 3 || result === 4 || result === 5 || result === 6) {
         turnTotal += result;
+        result2 = dice.roll();
+        console.log(result2);
+            if (result2=== 1) {
+                alert("Computer busted! That is the end of their turn")
+                alert("Player 1's turn! Click'Roll' to start your turn!")
+                turnTotal = 0;
+            }
+            else if (result2 === 2 || result2 === 3 || result2 === 4 || result2 === 5 || result2 === 6) {
+                turnTotal += result2;
+                console.log(turnTotal);
+                computerTotal = computerTotal + turnTotal;
+                turnTotal = 0;
+                console.log(computerTotal);
+
     }
 }
-//     var result = dice.roll();
-//     if (result === 1) {
-//         alert("Computer busted! That is the end of their turn")
-//         alert("Player 1's turn! Click'Roll' to start your turn!")
-//         turnTotal = 0;
-//     }
-//     else if (result === 2 || result === 3 || result === 4 || result === 5 || result === 6) {
-//         turnTotal += result;
-//         dice.roll();
-//         console.log("made it to 2nd dice roll!")
-//             if (result === 1) {
-//                 alert("Computer busted! That is the end of their turn")
-//                 alert("Player 1's turn! Click'Roll' to start your turn!")
-//                 turnTotal = 0;
-//             }
-//             else if (result === 2 || result === 3 || result === 4 || result === 5 || result === 6) {
-//                 turnTotal += result;
-//                 computerTotal = computerTotal + turnTotal;
-//                 turnTotal = 0;
-
-//     }
-// }
-// }
+}
 
 
 $(document).ready(function () {
@@ -89,9 +82,7 @@ $(document).ready(function () {
     });
     $("#buttonComputer").click(function (event) {
         event.preventDefault();
-        console.log("button works!")
         computerRoll();
-        console.log(turnTotal)
 
     });
     //     $("#buttonComputer").click(function (event) {
