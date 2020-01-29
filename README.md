@@ -8,8 +8,12 @@
 
 |   Behavior    |   Input     |     Output    |
 |--------------:|:-----------:|--------------:|
-| Create form. | user input |  add user input to list |
-| cross off list items | on click | strikethrough list item
+| Create button to roll dice. | click button |  randomly generated number 1-6 |
+| create loop that checks dice result with if statement | 1| Turn over. Switch to player 2. Turn over = 0|
+| add else if statement that adds dice value to turn total if dice shows 2-6 | 4 | turn total = 4 |
+| Create hold button | user clicks hold| Add turnTotal to player1Total. |
+|
+
 
 ## Setup/Installation Requirements
 
