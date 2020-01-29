@@ -26,7 +26,15 @@ var rollResults = function (result) {
 var addPlayer1Score = function (){
     player1Total = player1Total + turnTotal
     turnTotal =0;
+if (player1Total >= 100) {
+    alert("player 1 wins!");
+    alert("player 1 score:" + " ")
 }
+else { 
+    alert("Player 1 score:" + " " +player1Total)
+    alert("Player 2 turn!")
+}
+};
 
 
 
